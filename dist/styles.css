@@ -148,11 +148,18 @@ tbody tr:last-child td { border-bottom: 0; }
 .rule-card.invincible { border-color: rgba(230,220,200,.35); background: linear-gradient(120deg, rgba(230,220,200,.07), transparent); }
 .rule-card.invincible > span { color: var(--bone); }
 
-.integration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.integration-grid article { padding: 1.5rem; background: var(--bg); }
-.integration-grid h3 { margin: 2rem 0 .6rem; }
+.integration-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.integration-card { display: flex; flex-direction: column; min-height: 430px; padding: 1.5rem; background: var(--bg); }
+.integration-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.integration-grid h3 { margin: 1.5rem 0 .6rem; }
 .integration-grid p { margin: 0; color: var(--muted); }
+.integration-grid ul { margin: 1.15rem 0 1.5rem; padding: 0; list-style: none; }
+.integration-grid li { position: relative; margin-top: .7rem; padding-left: 1rem; color: #cbd0d3; font-size: .9rem; line-height: 1.55; }
+.integration-grid li::before { content: "+"; position: absolute; left: 0; color: var(--cyber); font-family: var(--mono); }
 .integration-state { color: var(--cyber); font: .67rem var(--mono); letter-spacing: .08em; }
+.integration-state.supported { color: var(--bone); }
+.integration-version { color: var(--muted); font: .67rem var(--mono); letter-spacing: .06em; }
+.integration-grid .compat-note { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); color: #8f989e; font: .75rem/1.55 var(--mono); }
 
 .install-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: start; }
 .install-steps { margin: 0; padding: 0; list-style: none; }

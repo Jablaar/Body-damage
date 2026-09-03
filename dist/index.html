@@ -45,7 +45,7 @@
           <div><dt>Minecraft</dt><dd>1.20.1</dd></div>
           <div><dt>Forge</dt><dd>47.4.10 tested</dd></div>
           <div><dt>Side</dt><dd>Client + server</dd></div>
-          <div><dt>Heroes</dt><dd>Not required</dd></div>
+          <div><dt>Anatomy</dt><dd>10 regions</dd></div>
         </dl>
       </div>
 
@@ -158,9 +158,72 @@
         <h2>Built to connect.</h2>
       </div>
       <div class="integration-grid">
-        <article><span class="integration-state">OPTIONAL</span><h3>CyberWare</h3><p>Robosurgeon-compatible replacements, cyber HP, Reinforced Fists, limb persistence, and administrative installation tools.</p></article>
-        <article><span class="integration-state">OPTIONAL</span><h3>ViltrumiteCore</h3><p>Race-aware healing, body-part ability gates, functional-arm selection, and head-damage Darkness behavior.</p></article>
-        <article><span class="integration-state">SUPPORTED</span><h3>Essential multiplayer</h3><p>Structural, visual, cyber-limb, and cyber-HP data synchronize to tracking clients.</p></article>
+        <article class="integration-card">
+          <div class="integration-top"><span class="integration-state">OPTIONAL</span><span class="integration-version">1.7.1+</span></div>
+          <h3>CyberWare 1.20.1 Port</h3>
+          <p>Connects anatomical loss to the Robosurgeon and turns installed replacements into functional body parts.</p>
+          <ul>
+            <li>Cyber arms, legs, hands, and feet restore their matching functions.</li>
+            <li>Each replacement has separate, non-regenerating cyber HP with a configurable 3× default durability.</li>
+            <li>A destroyed replacement is removed from the real CyberWare capability and synchronized immediately.</li>
+            <li>Admin commands validate slots, install limits, prerequisites, and incompatibilities.</li>
+          </ul>
+          <p class="compat-note">Reinforced Fist support needs the paired 1.7.3 build; the complete hand/offhand path uses the paired 1.7.4 build.</p>
+        </article>
+        <article class="integration-card">
+          <div class="integration-top"><span class="integration-state">OPTIONAL</span><span class="integration-version">1.6.2+</span></div>
+          <h3>ViltrumiteCore</h3>
+          <p>Adds race-aware anatomy rules and makes real structural damage control compatible abilities.</p>
+          <ul>
+            <li>Laser Eyes follows head integrity; Grab and Thunderclap follow hand integrity.</li>
+            <li>Sonic Punch selects a surviving arm, while Block, Lethal Chop, and Barrage require at least one functional arm.</li>
+            <li>Working cybernetic replacements satisfy the same structural gates.</li>
+            <li>Head-gate Darkness bypasses Viltrumite immunity only for the effect owned by Body Damage.</li>
+          </ul>
+          <p class="compat-note">Use the paired 1.7.12 build for the full ability-gate and surviving-arm behavior.</p>
+        </article>
+        <article class="integration-card">
+          <div class="integration-top"><span class="integration-state">OPTIONAL</span><span class="integration-version">1.1.31+</span></div>
+          <h3>Viltrumite Progression</h3>
+          <p>Uses progression rank to scale how quickly Viltrumite structural injuries recover.</p>
+          <ul>
+            <li>Default rank factors range from Soldier at 1/6× through Emperor and Betrayer at 1×.</li>
+            <li>The configurable post-death factor is applied after the rank multiplier.</li>
+            <li>The admin-only Invincible rank gains a head-bone damage floor and ordered biological reconstruction.</li>
+          </ul>
+          <p class="compat-note">If Progression is absent, structural healing safely falls back to the normal 1× rank factor.</p>
+        </article>
+        <article class="integration-card">
+          <div class="integration-top"><span class="integration-state">OPTIONAL</span><span class="integration-version">COMPANION</span></div>
+          <h3>CyberwarePlus</h3>
+          <p>Extends the visual compatibility path for independent prosthetic hands.</p>
+          <ul>
+            <li>Renders a Reinforced Fist as a hand-only replacement instead of a full cyberarm.</li>
+            <li>Keeps left and right hand prosthetics aligned with Body Damage’s independent hand state.</li>
+          </ul>
+          <p class="compat-note">Use CyberwarePlus 1.6.2 with the paired CyberWare 1.7.4 build.</p>
+        </article>
+        <article class="integration-card">
+          <div class="integration-top"><span class="integration-state">OPTIONAL</span><span class="integration-version">CONFIG UI</span></div>
+          <h3>Configured</h3>
+          <p>Adds an in-game editor for Body Damage’s standard Forge configuration.</p>
+          <ul>
+            <li>Edit structural pools, heart penalties, regeneration, cyber durability, respawn anatomy, and ability thresholds.</li>
+            <li>Open it through Mods → Body Damage → Config; saved values reload into gameplay live.</li>
+          </ul>
+          <p class="compat-note">Configured is only a convenience—the TOML file can still be edited manually.</p>
+        </article>
+        <article class="integration-card">
+          <div class="integration-top"><span class="integration-state supported">SUPPORTED</span><span class="integration-version">MULTIPLAYER</span></div>
+          <h3>Essential</h3>
+          <p>Body Damage supports Essential-hosted worlds through the same server-authoritative multiplayer synchronization.</p>
+          <ul>
+            <li>Structural, visual, cyber-limb, and cyber-HP values publish to tracking clients.</li>
+            <li>Admin changes refresh the affected anatomy on clients immediately.</li>
+            <li>Every participating player still needs Body Damage and its required client-side dependencies.</li>
+          </ul>
+          <p class="compat-note">No special Essential-only configuration is required.</p>
+        </article>
       </div>
     </section>
 
@@ -173,7 +236,7 @@
         <ol class="install-steps">
           <li><span>1</span><div><h3>Prepare Forge</h3><p>Use Minecraft 1.20.1, Java 17, and Forge 47.x. Forge 47.4.10 is the tested target.</p></div></li>
           <li><span>2</span><div><h3>Install requirements</h3><p>Add Palladium 4.5.8+, Pehkui 3.8.2+, GeckoLib 4.8.4+, KubeJS 2001.6.5+, and Rhino 2001.2.3+.</p></div></li>
-          <li><span>3</span><div><h3>Add Body Damage</h3><p>Place the Body Damage JAR in the <code>mods</code> folder on every client and server. Do not install an older Heroes-dependent Body Damage build beside it.</p></div></li>
+          <li><span>3</span><div><h3>Add Body Damage</h3><p>Place the Body Damage JAR in the <code>mods</code> folder on every client and server. Remove older Body Damage builds so only one version is installed.</p></div></li>
           <li><span>4</span><div><h3>Configure</h3><p>Press <kbd>N</kbd> for anatomy. Install Configured to edit the live Forge settings through Mods → Body Damage → Config.</p></div></li>
         </ol>
         <aside class="requirements">
@@ -182,7 +245,7 @@
             <div><dt>Body Damage</dt><dd>2.4.39</dd></div>
             <div><dt>Minecraft</dt><dd>1.20.1</dd></div>
             <div><dt>Forge</dt><dd>47+</dd></div>
-            <div><dt>Heroes</dt><dd>Not required</dd></div>
+            <div><dt>Java</dt><dd>17</dd></div>
             <div><dt>CyberWare Port</dt><dd>1.7.1+ optional</dd></div>
             <div><dt>ViltrumiteCore</dt><dd>1.6.2+ optional</dd></div>
           </dl>
