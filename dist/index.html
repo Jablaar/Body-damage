@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0d10">
+  <meta name="description" content="Body Damage is a localized anatomical damage system for Minecraft 1.20.1 Forge, with staged wounds, limb loss, persistent anatomy, and cybernetic replacements.">
+  <link rel="canonical" href="https://jablaar.github.io/Body-damage/">
+  <title>Body Damage — Minecraft Forge Mod</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Body Damage home">
+      <span class="brand-mark" aria-hidden="true">BD</span>
+      <span>BODY DAMAGE</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#features">Features</a>
+      <a href="#anatomy">Anatomy</a>
+      <a href="#install">Install</a>
+      <a href="#commands">Commands</a>
+      <a href="https://github.com/Jablaar/Body-damage" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <span class="build-tag">v2.4.39</span>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> SYSTEM ONLINE // FORGE 1.20.1</p>
+        <h1>Every hit leaves<br><span>a record.</span></h1>
+        <p class="lede">Localized injuries, staged tissue damage, permanent limb loss, and cybernetic reconstruction—tracked independently for every player.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="downloads/Body_Damage-2_4_39-invincible-anatomical-immortality-anatomygui-viltrumitecore-optional.jar" download>Download 2.4.39</a>
+          <a class="button secondary" href="#install">Install guide</a>
+          <a class="button secondary" href="#commands">Commands</a>
+        </div>
+        <dl class="quick-specs">
+          <div><dt>Minecraft</dt><dd>1.20.1</dd></div>
+          <div><dt>Forge</dt><dd>47.4.10 tested</dd></div>
+          <div><dt>Side</dt><dd>Client + server</dd></div>
+          <div><dt>Heroes</dt><dd>Not required</dd></div>
+        </dl>
+      </div>
+
+      <aside class="diagnostic" aria-label="Example anatomy diagnostic">
+        <div class="diagnostic-head">
+          <div>
+            <span class="terminal-label">ANATOMY // LIVE SNAPSHOT</span>
+            <strong>STRUCTURAL INTEGRITY</strong>
+          </div>
+          <span class="sync-badge">SYNCED</span>
+        </div>
+        <div class="vital-grid">
+          <article class="part-card vital">
+            <div><span>HEAD</span><b>17 / 17</b></div>
+            <div class="bar"><i style="--fill:100%"></i></div>
+            <small>SKIN · VITAL</small>
+          </article>
+          <article class="part-card vital">
+            <div><span>TORSO</span><b>20 / 20</b></div>
+            <div class="bar"><i style="--fill:100%"></i></div>
+            <small>SKIN · VITAL</small>
+          </article>
+        </div>
+        <div class="limb-grid">
+          <article class="part-card"><div><span>R ARM</span><b>18</b></div><div class="bar"><i style="--fill:100%"></i></div></article>
+          <article class="part-card"><div><span>L ARM</span><b>18</b></div><div class="bar"><i style="--fill:100%"></i></div></article>
+          <article class="part-card warning"><div><span>R HAND</span><b>7</b></div><div class="bar"><i style="--fill:58%"></i></div><small>MUSCLE</small></article>
+          <article class="part-card"><div><span>L HAND</span><b>12</b></div><div class="bar"><i style="--fill:100%"></i></div><small>SKIN</small></article>
+          <article class="part-card"><div><span>R LEG</span><b>20</b></div><div class="bar"><i style="--fill:100%"></i></div></article>
+          <article class="part-card cyber"><div><span>L LEG</span><b>CYB</b></div><div class="bar"><i style="--fill:82%"></i></div><small>CYBERNETIC</small></article>
+          <article class="part-card"><div><span>R FOOT</span><b>11</b></div><div class="bar"><i style="--fill:100%"></i></div></article>
+          <article class="part-card cyber"><div><span>L FOOT</span><b>CYB</b></div><div class="bar"><i style="--fill:82%"></i></div><small>CYBERNETIC</small></article>
+        </div>
+        <div class="diagnostic-foot"><span>PRESS N TO INSPECT</span><span>20 TPS</span></div>
+      </aside>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">CORE SYSTEMS</p>
+        <h2>Damage with consequences.</h2>
+        <p>Body Damage turns the player into ten independently tracked regions. Wounds affect appearance, health, movement, equipment, and compatible abilities.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h3>Localized trauma</h3>
+          <p>Melee, projectile, and fall damage resolve against anatomical zones instead of collapsing everything into one health bar.</p>
+          <ul><li>Per-part structural pools</li><li>Hit rotation prevents repetition</li><li>Server-authoritative resolution</li></ul>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h3>Visible degradation</h3>
+          <p>Biological parts progress through skin, muscle, bone, and removal using the included Palladium and GeckoLib assets.</p>
+          <ul><li>Stable healing transitions</li><li>Independent limbs and extremities</li><li>Persistent state through death</li></ul>
+        </article>
+        <article class="feature-card accent-card">
+          <span class="feature-index">03</span>
+          <h3>Cybernetic continuity</h3>
+          <p>Supported CyberWare replacements restore function with tougher, non-regenerating durability pools.</p>
+          <ul><li>3× durability by default</li><li>Robosurgeon synchronization</li><li>Independent prosthetic hands</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section process-section" aria-labelledby="process-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">DAMAGE PIPELINE</p>
+        <h2 id="process-title">One impact. Four decisions.</h2>
+      </div>
+      <ol class="process">
+        <li><span>01</span><div><b>Locate</b><p>Resolve impact position and body region.</p></div></li>
+        <li><span>02</span><div><b>Apply</b><p>Reduce that region’s structural health.</p></div></li>
+        <li><span>03</span><div><b>Render</b><p>Advance skin, muscle, bone, or removal.</p></div></li>
+        <li><span>04</span><div><b>Enforce</b><p>Update hearts, function, gates, and sync.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="section anatomy-section" id="anatomy">
+      <div class="section-heading">
+        <p class="eyebrow">DEFAULT ANATOMY</p>
+        <h2>Ten regions. No spare parts.</h2>
+        <p>Every pool and heart penalty is configurable. Right and left lower limbs are tracked independently.</p>
+      </div>
+      <div class="anatomy-layout">
+        <div class="anatomy-table-wrap">
+          <table>
+            <thead><tr><th>Region</th><th>Structural HP</th><th>Heart penalty</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Head</td><td>17</td><td>Vital</td><td>Laser Eyes gate</td></tr>
+              <tr><td>Torso</td><td>20</td><td>4</td><td>Vital region</td></tr>
+              <tr><td>Right / left arm</td><td>18 each</td><td>2 each</td><td>Ability and reach function</td></tr>
+              <tr><td>Right / left hand</td><td>12 each</td><td>1 each</td><td>Grab, Thunderclap, offhand</td></tr>
+              <tr><td>Right / left leg</td><td>20 each</td><td>2 total</td><td>Height and movement</td></tr>
+              <tr><td>Right / left foot</td><td>11 each</td><td>1 total</td><td>Movement and takeoff</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule-stack">
+          <article class="rule-card"><span>HUMAN</span><h3>Mid-muscle is lethal</h3><p>Real head or torso damage reaching the middle of the muscle range kills the player.</p></article>
+          <article class="rule-card"><span>VILTRUMITE</span><h3>Bone is lethal</h3><p>Head and torso remain survivable until genuine structural damage reaches bone.</p></article>
+          <article class="rule-card invincible"><span>INVINCIBLE</span><h3>Head-bone floor</h3><p>The admin-only rank stops further damage at head bone while the rest of the body can still be destroyed and reconstructed.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section integration-section" id="integrations">
+      <div class="section-heading compact">
+        <p class="eyebrow">INTEGRATIONS</p>
+        <h2>Built to connect.</h2>
+      </div>
+      <div class="integration-grid">
+        <article><span class="integration-state">OPTIONAL</span><h3>CyberWare</h3><p>Robosurgeon-compatible replacements, cyber HP, Reinforced Fists, limb persistence, and administrative installation tools.</p></article>
+        <article><span class="integration-state">OPTIONAL</span><h3>ViltrumiteCore</h3><p>Race-aware healing, body-part ability gates, functional-arm selection, and head-damage Darkness behavior.</p></article>
+        <article><span class="integration-state">SUPPORTED</span><h3>Essential multiplayer</h3><p>Structural, visual, cyber-limb, and cyber-HP data synchronize to tracking clients.</p></article>
+      </div>
+    </section>
+
+    <section class="section install-section" id="install">
+      <div class="section-heading">
+        <p class="eyebrow">INSTALLATION</p>
+        <h2>Deploy the anatomy system.</h2>
+      </div>
+      <div class="install-layout">
+        <ol class="install-steps">
+          <li><span>1</span><div><h3>Prepare Forge</h3><p>Use Minecraft 1.20.1, Java 17, and Forge 47.x. Forge 47.4.10 is the tested target.</p></div></li>
+          <li><span>2</span><div><h3>Install requirements</h3><p>Add Palladium 4.5.8+, Pehkui 3.8.2+, GeckoLib 4.8.4+, KubeJS 2001.6.5+, and Rhino 2001.2.3+.</p></div></li>
+          <li><span>3</span><div><h3>Add Body Damage</h3><p>Place the Body Damage JAR in the <code>mods</code> folder on every client and server. Do not install an older Heroes-dependent Body Damage build beside it.</p></div></li>
+          <li><span>4</span><div><h3>Configure</h3><p>Press <kbd>N</kbd> for anatomy. Install Configured to edit the live Forge settings through Mods → Body Damage → Config.</p></div></li>
+        </ol>
+        <aside class="requirements">
+          <h3>Compatibility matrix</h3>
+          <dl>
+            <div><dt>Body Damage</dt><dd>2.4.39</dd></div>
+            <div><dt>Minecraft</dt><dd>1.20.1</dd></div>
+            <div><dt>Forge</dt><dd>47+</dd></div>
+            <div><dt>Heroes</dt><dd>Not required</dd></div>
+            <div><dt>CyberWare Port</dt><dd>1.7.1+ optional</dd></div>
+            <div><dt>ViltrumiteCore</dt><dd>1.6.2+ optional</dd></div>
+          </dl>
+          <p>Advanced prosthetic and ability-gate features require their matching paired mod builds.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section commands-section" id="commands">
+      <div class="section-heading">
+        <p class="eyebrow">ADMIN TOOLING</p>
+        <h2>Direct anatomical control.</h2>
+        <p>Commands require permission level 2. Add a player name to supported commands to target another player.</p>
+      </div>
+      <div class="command-list">
+        <div class="command-row"><code>/bodydamage status [player]</code><span>Inspect live structural, visual, recovery, and cyber data.</span><button type="button" data-copy="/bodydamage status">Copy</button></div>
+        <div class="command-row"><code>/bodydamage set &lt;part&gt; &lt;value&gt; [player]</code><span>Set exact structural HP.</span><button type="button" data-copy="/bodydamage set &lt;part&gt; &lt;value&gt;">Copy</button></div>
+        <div class="command-row"><code>/bodydamage state &lt;part&gt; &lt;state&gt; [player]</code><span>Apply intact, muscle, bone, or removed state.</span><button type="button" data-copy="/bodydamage state &lt;part&gt; &lt;state&gt;">Copy</button></div>
+        <div class="command-row"><code>/bodydamage remove &lt;part&gt; [player]</code><span>Remove a biological region immediately.</span><button type="button" data-copy="/bodydamage remove &lt;part&gt;">Copy</button></div>
+        <div class="command-row"><code>/bodydamage heal &lt;part&gt; [player]</code><span>Restore uncovered biological anatomy.</span><button type="button" data-copy="/bodydamage heal &lt;part&gt;">Copy</button></div>
+        <div class="command-row"><code>/bodydamage reset biological [part] [player]</code><span>Reset biological parts without overlapping installed cybernetics.</span><button type="button" data-copy="/bodydamage reset biological">Copy</button></div>
+        <div class="command-row"><code>/bodydamage reset cybernetic [part] [player]</code><span>Repair matching installed cybernetics.</span><button type="button" data-copy="/bodydamage reset cybernetic">Copy</button></div>
+        <div class="command-row"><code>/bodydamage cyber install|remove &lt;side&gt; [player]</code><span>Control exact left or right prosthetic placement.</span><button type="button" data-copy="/bodydamage cyber install &lt;side&gt;">Copy</button></div>
+        <div class="command-row"><code>/bodydamage cyberware install|remove &lt;id&gt; [count] [player]</code><span>Manage compatible cyberware with Robosurgeon rules.</span><button type="button" data-copy="/bodydamage cyberware install &lt;namespace:id&gt;">Copy</button></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p class="eyebrow">BODY DAMAGE // 2.4.39</p>
+      <h2>Your health bar was only the summary.</h2>
+      <p>The anatomy underneath is where the interesting problems begin.</p>
+      <a class="button primary" href="downloads/Body_Damage-2_4_39-invincible-anatomical-immortality-anatomygui-viltrumitecore-optional.jar" download>Download 2.4.39</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>BODY DAMAGE · MINECRAFT 1.20.1 FORGE</span>
+    <a href="https://github.com/Jablaar/Body-damage" target="_blank" rel="noopener">GITHUB REPOSITORY</a>
+    <span>ALL RIGHTS RESERVED</span>
+  </footer>
+  <div class="copy-toast" role="status" aria-live="polite">Command copied</div>
+  <script src="app.js"></script>
+</body>
+</html>
